@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saif Portfolio — Admin</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div id="login" class="login">
+  <div class="login-card">
+    <div class="mini">PRIVATE ADMIN</div>
+    <h1>Saif<span>.</span></h1>
+    <p>Enter your admin PIN to edit the portfolio.</p>
+    <input id="pin" type="password" placeholder="Admin PIN" autocomplete="off">
+    <button id="loginBtn">Enter Admin</button>
+    <small>Default PIN: <b>2468</b> — change it after entering.</small>
+  </div>
+</div>
+
+<div id="panel" class="hidden">
+<header class="admin-head">
+  <div><div class="mini">PORTFOLIO CMS</div><h1>Saif<span>.</span> Admin</h1></div>
+  <div class="head-actions"><a href="../" target="_blank">View Site ↗</a><button id="logout">Lock</button></div>
+</header>
+
+<main class="admin-wrap">
+  <div class="notice">Static-site mode: changes are saved in this browser using local storage. No database or server is used.</div>
+
+  <section class="card">
+    <div class="card-head"><h2>Profile</h2><span>01</span></div>
+    <div class="grid">
+      <label>Full name<input id="name"></label>
+      <label>Role<input id="role"></label>
+      <label class="wide">Hero introduction<textarea id="intro"></textarea></label>
+      <label class="wide">About title<input id="aboutTitle"></label>
+      <label class="wide">About text<textarea id="about"></textarea></label>
+      <label class="wide">Contact text<textarea id="contactText"></textarea></label>
+      <label>Email<input id="email"></label>
+      <label>Phone<input id="phone"></label>
+      <label>Instagram URL<input id="instagram"></label>
+      <label>Facebook URL<input id="facebook"></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Profile Photo</h2><span>02</span></div>
+    <div class="photo-editor">
+      <img id="preview" src="../assets/profile.jpg" alt="">
+      <div>
+        <input id="photo" type="file" accept="image/*">
+        <p>Choose a new image. It is stored locally in this browser; it does not upload to a server.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Quick Facts</h2><span>03</span></div>
+    <div id="factsEditor"></div>
+    <button class="add" data-add="fact">+ Add fact</button>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Education</h2><span>04</span></div>
+    <div id="educationEditor"></div>
+    <button class="add" data-add="education">+ Add education</button>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Skills</h2><span>05</span></div>
+    <div id="skillsEditor"></div>
+    <button class="add" data-add="skill">+ Add skill</button>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Interests</h2><span>06</span></div>
+    <div id="interestEditor"></div>
+    <button class="add" data-add="interest">+ Add interest</button>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Security</h2><span>07</span></div>
+    <label>New admin PIN<input id="newPin" type="password" placeholder="Leave empty to keep current PIN"></label>
+    <p class="warning">Important: because this is a database-free static website, this PIN is only a client-side gate and is not strong security against someone who can inspect the public source code.</p>
+  </section>
+
+  <div class="savebar">
+    <button id="save" class="save">Save All Changes</button>
+    <button id="reset" class="danger">Reset to Default</button>
+    <span id="status"></span>
+  </div>
+</main>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
